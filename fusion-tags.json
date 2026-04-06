@@ -8,7 +8,7 @@
       "isEnabled": true,
       "name": "Best",
       "pattern": "♛",
-      "tagColor": "#1A000000",
+      "tagColor": "#80000000",
       "tagStyle": "filled and bordered",
       "textColor": "#27C04F",
       "type": "filter"
@@ -21,7 +21,7 @@
       "isEnabled": true,
       "name": "Good",
       "pattern": "[⭑✦]",
-      "tagColor": "#1A000000",
+      "tagColor": "#80000000",
       "tagStyle": "filled and bordered",
       "textColor": "#27C04F",
       "type": "filter"
@@ -34,7 +34,7 @@
       "isEnabled": true,
       "name": "Bad",
       "pattern": "[△∅]",
-      "tagColor": "#1A000000",
+      "tagColor": "#80000000",
       "tagStyle": "filled and bordered",
       "textColor": "#FF6904",
       "type": "filter"
@@ -47,7 +47,7 @@
       "isEnabled": true,
       "name": "4K",
       "pattern": "(?i)^(?!.*\\b(?:1080[pi]?|720[pi]?|full[-\\s]?hd|fhd|hd1080|hd720)\\b).*?(?:\\b(bd|hd|m)?2160[pi]?\\b|\\b4k\\b|\\bu(ltra)?[ ._-]?hd\\b|\\b3840\\s?x\\s?\\d{4}\\b)",
-      "tagColor": "#1A000000",
+      "tagColor": "#80000000",
       "tagStyle": "filled and bordered",
       "textColor": "#FFBE01",
       "type": "filter"
@@ -60,7 +60,7 @@
       "isEnabled": true,
       "name": "1080p",
       "pattern": "(?i)\\b(bd|hd|m)?1080[pi]?\\b|\\b1920\\s?x\\s?\\d{3,4}\\b",
-      "tagColor": "#1A000000",
+      "tagColor": "#80000000",
       "tagStyle": "filled and bordered",
       "textColor": "#FF6904",
       "type": "filter"
@@ -73,7 +73,7 @@
       "isEnabled": true,
       "name": "720p",
       "pattern": "(?i)\\b(bd|hd|m)?720[pi]?\\b|\\b1280\\s?x\\s?\\d{3,4}\\b",
-      "tagColor": "#1A000000",
+      "tagColor": "#80000000",
       "tagStyle": "filled and bordered",
       "textColor": "#FB411C",
       "type": "filter"
@@ -86,7 +86,7 @@
       "isEnabled": true,
       "name": "DV",
       "pattern": "(?i)\\b(dv|dovi|dolby[ ._-]?vision)\\b",
-      "tagColor": "#1A000000",
+      "tagColor": "#80000000",
       "tagStyle": "filled and bordered",
       "textColor": "#FFBE01",
       "type": "filter"
@@ -99,7 +99,7 @@
       "isEnabled": true,
       "name": "Atmos",
       "pattern": "(?=.*(^|[.\\s_\\-])[aA][tT][mM][oO][sS]([.\\s_\\-]|$))(?=.*(?:[dD][dD][pP]|[dD][dD]\\+|[eE]-?[aA][cC]3|[eE][aA][cC]3))",
-      "tagColor": "#1A000000",
+      "tagColor": "#80000000",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFF",
       "type": "filter"
@@ -112,7 +112,7 @@
       "isEnabled": true,
       "name": "7.1",
       "pattern": "(?i)(?=.*[^0-9][7-8][ .][0-1]\\b)(?!.*[^0-9]5[ .][0-1]\\b)(?!.*[^0-9]6[ .][0-1]\\b)(?!.*(?<!repac)[^0-9][1-4][ .][0-1]|\\\\b(Stereo|Mono)\\\\b)",
-      "tagColor": "#1A000000",
+      "tagColor": "#80000000",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFF",
       "type": "filter"
@@ -125,7 +125,7 @@
       "isEnabled": true,
       "name": "5.1",
       "pattern": "(?i)(?=.*[^0-9]5[ .][0-1]\\b)(?!.*[^0-9]6[ .][0-1]\\b)(?!.*[^0-9][7-8][ .][0-1]\\b)(?!.*(?<!repac)[^0-9][1-4][ .][0-1]\\b|\\\\b(Stereo|Mono)\\\\b)",
-      "tagColor": "#1A000000",
+      "tagColor": "#80000000",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFF",
       "type": "filter"
