@@ -84,16 +84,16 @@ function hsl(h,s,l){const a=s*Math.min(l,1-l),f=n=>{const k=(n+h/30)%12;return l
 function hx(r,g,b){return((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1).toUpperCase()}
 function pctS(p){const c=hsl((p/100)*120,1,.45),h=hx(...c);return{bc:'#66'+h,bg:'#33'+h,tc:'#FF'+h}}
 
-// 8 realistic streams
+// 8 realistic streams with actual filenames
 const STREAMS=[
-  {t:'Avatar Fire and Ash',s:'TorBox \xb7 76 GB',pct:99,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'7.1',src:'remux',q:'best',tier:'t1'},
-  {t:'Avatar Fire and Ash',s:'BluRay \xb7 TorBox \xb7 76 GB',pct:90,res:'4K',hdr:'HDR10+',dv:true,aud:'atmos',ch:'7.1',src:'bluray',q:'good',tier:'t2'},
-  {t:'Avatar Fire and Ash',s:'BluRay \xb7 TorBox \xb7 76 GB',pct:95,res:'4K',hdr:'HDR10',dv:false,aud:'dtsx',ch:'7.1',src:'bluray',q:'best',tier:'t1'},
-  {t:'Avatar Fire and Ash',s:'BluRay \xb7 TorBox \xb7 76 GB',pct:90,res:'4K',hdr:'HDR',dv:false,aud:'truehd',ch:'7.1',src:'bluray',q:'good',tier:'t2'},
-  {t:'Avatar Fire and Ash',s:'WEB-DL \xb7 TorBox \xb7 18 GB',pct:85,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'webdl',q:'good',tier:'t1'},
-  {t:'Avatar Fire and Ash',s:'BluRay \xb7 TorBox \xb7 12 GB',pct:80,res:'1080p',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'bluray',q:'good',tier:'t2'},
-  {t:'Avatar Fire and Ash',s:'WEB-DL \xb7 TorBox \xb7 4 GB',pct:70,res:'1080p',hdr:null,dv:true,aud:'ddp',ch:'5.1',src:'webdl',q:'good',tier:'t3'},
-  {t:'Avatar Fire and Ash',s:'WEB-DL \xb7 TorBox \xb7 2 GB',pct:50,res:'720p',hdr:null,dv:true,aud:'dd',ch:'5.1',src:'webdl',q:'ok',tier:'t3'},
+  {qual:'Bluray Remux',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.REMUX.DV.TrueHD.7.1.Atmos-FraMeSToR.mkv',pct:99,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'7.1',src:'remux',q:'best',tier:'t1'},
+  {qual:'Bluray',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.DV.HDR10Plus.DDP5.1.Atmos-iFT.mkv',pct:90,res:'4K',hdr:'HDR10+',dv:true,aud:'atmos',ch:'7.1',src:'bluray',q:'good',tier:'t2'},
+  {qual:'Bluray',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.HDR10.DTS-X.7.1-CtrlHD.mkv',pct:95,res:'4K',hdr:'HDR10',dv:false,aud:'dtsx',ch:'7.1',src:'bluray',q:'best',tier:'t1'},
+  {qual:'Bluray',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.HDR.TrueHD.7.1-DON.mkv',pct:90,res:'4K',hdr:'HDR',dv:false,aud:'truehd',ch:'7.1',src:'bluray',q:'good',tier:'t2'},
+  {qual:'Web-Dl',fn:'Avatar.Fire.and.Ash.2025.2160p.WEB-DL.DDP5.1.Atmos.DV-FLUX.mkv',pct:85,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'webdl',q:'good',tier:'t1'},
+  {qual:'Bluray',fn:'Avatar.Fire.and.Ash.2025.1080p.BluRay.DV.DDP5.1.Atmos-hallowed.mkv',pct:80,res:'1080p',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'bluray',q:'good',tier:'t2'},
+  {qual:'Web-Dl',fn:'Avatar.Fire.and.Ash.2025.1080p.WEB-DL.DDP5.1.DV-PHOENiX.mkv',pct:70,res:'1080p',hdr:null,dv:true,aud:'ddp',ch:'5.1',src:'webdl',q:'good',tier:'t3'},
+  {qual:'Web-Dl',fn:'Avatar.Fire.and.Ash.2025.720p.WEB-DL.DD5.1.DV-RandomGrp.mkv',pct:50,res:'720p',hdr:null,dv:true,aud:'dd',ch:'5.1',src:'webdl',q:'ok',tier:'t3'},
 ];
 
 function rgba(c){
@@ -110,11 +110,18 @@ function thtml(label,img,st,lg){
   return'<span class="'+cls+'" style="'+s+'">'+label+'</span>';
 }
 
+function fmtName(s){
+  const sym={best:'\u265b ',good:'\u2b51 ',ok:'\u25b3 '};
+  if(C.qual==='bgb') return (sym[s.q]||'')+s.qual;
+  if(C.qual==='pct') return s.pct+'% '+s.qual;
+  return s.qual;
+}
+
 function preview(){
   const p=C.icon,mono=p==='mono';
   let h='';
   for(const s of STREAMS){
-    h+='<div class="cd"><div class="cn">'+s.t+'</div><div class="cs">'+s.s+'</div><div class="tr">';
+    h+='<div class="cd"><div class="cn">'+fmtName(s)+'</div><div class="cs">'+s.fn+'</div><div class="tr">';
 
     // 1) QUALITY
     if(C.qual==='bgb'){
