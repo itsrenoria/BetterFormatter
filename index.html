@@ -56,6 +56,11 @@ h1{font-size:1.5rem;font-weight:800;margin-bottom:.2rem}
 <div class="o" data-v="always">Always (hybrids)</div>
 </div></div>
 
+<div class="sec"><h2>Description</h2><div class="opts" data-g="desc">
+<div class="o on" data-v="fn">Filename</div>
+<div class="o" data-v="short">Source · Size</div>
+</div></div>
+
 <h2 class="pvh">Preview</h2>
 <div id="pv"></div>
 
@@ -69,7 +74,7 @@ h1{font-size:1.5rem;font-weight:800;margin-bottom:.2rem}
 
 <script>
 const I='https://raw.githubusercontent.com/9mousaa/BetterFormatter/main/images/';
-let C={icon:'colored',qual:'bgb',dv:'combo',hdr:'nodv'};
+let C={icon:'colored',qual:'bgb',dv:'combo',hdr:'nodv',desc:'fn'};
 
 const ST={
   best:{bc:'#FF00FF37',bg:'#E600E932',tc:'#27C04F'},
@@ -122,7 +127,8 @@ function preview(){
   const p=C.icon,mono=p==='mono';
   let h='';
   for(const s of STREAMS){
-    h+='<div class="cd"><div class="cn">'+fmtName(s)+'</div><div class="cs">'+s.fn+'</div><div class="tr">';
+    const descTxt=C.desc==='fn'?s.fn:s.qual+' \xb7 '+s.fn.match(/[\d.]+\s?GB/i)?.[0];
+    h+='<div class="cd"><div class="cn">'+fmtName(s)+'</div><div class="cs">'+(descTxt||s.fn)+'</div><div class="tr">';
 
     // 1) QUALITY
     if(C.qual==='bgb'){
@@ -301,7 +307,9 @@ function gen(){
 }
 
 function fmt(){
-  const d='{stream.filename::exists["{stream.filename}"||""]}';
+  const d=C.desc==='fn'
+    ?'{stream.filename::exists["{stream.filename}"||""]}'
+    :'{stream.quality::exists["{stream.quality::title}"||""]}{service.shortName::exists[" \xb7 {service.shortName}"||""]}{stream.size::>0[" \xb7 {stream.size::bytes}"||""]}';
   if(C.qual==='pct')return{n:'{stream.nSeScore::exists["{stream.nSeScore}% "||""]}{stream.quality::exists["{stream.quality::title}"||""]}',d};
   if(C.qual==='bgb')return{n:"{stream.nSeScore::exists[\"{stream.nSeScore::pstar::replace('\u2bea','\u2605')::replace('\u2605\u2605\u2605\u2605\u2605','\u265b ')::replace('\u2605\u2605\u2605\u2605\u2606','\u2b51 ')::replace('\u2605\u2605\u2605\u2606\u2606','\u2726 ')::replace('\u2605\u2605\u2606\u2606\u2606','\u25b3 ')::replace('\u2605\u2606\u2606\u2606\u2606','\u2205 ')::replace('\u2606\u2606\u2606\u2606\u2606','\u2205 ')}\"||\"\"]}"+'{stream.quality::exists["{stream.quality::title}"||""]}',d};
   return{n:'{stream.quality::exists["{stream.quality::title}"||""]}',d};
