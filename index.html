@@ -138,7 +138,7 @@ function preview(){
     }
 
     // 1b) SEADEX — right after quality
-    if(s.seadex)h+=thtml(null,'SeaDex.png',ST.best);
+    if(s.seadex)h+=thtml(null,p+'-SeaDex.png',mono?ST.res:ST.best);
 
     // 2) RESOLUTION
     const ri=s.res==='4K'?'4k.png':s.res.toLowerCase()+'.png';
