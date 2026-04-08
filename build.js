@@ -106,7 +106,7 @@ function gen(C){
   }
 
   // SeaDex — right after quality (from AIOStreams formatter output)
-  T.push(mk('v-seadex','SeaDex','(?i)\\b(?:seadex|best[\\s._-]?release|alt[\\s._-]?(?:best[\\s._-]?)?release)\\b',p+'-SeaDex.png',mono?ST.res:ST.best,'gv'));
+  T.push(mk('v-seadex','SeaDex','(?i)\\b(?:seadex|best[\\s._-]?release|alt[\\s._-]?(?:best[\\s._-]?)?release)\\b|\u1d00\u029f\u1d1b \u0280\u1d07\u029f\u1d07\u1d00s\u1d07|\u0299\u1d07s\u1d1b \u0280\u1d07\u029f\u1d07\u1d00s\u1d07',p+'-SeaDex.png',mono?ST.res:ST.best,'gv'));
 
   // Resolution
   T.push(mk('r-4k','4K','(?i)^(?=.*(?:2160[pi]?|4k|uhd))(?!.*(?:1080[pi]?|720[pi]?))','4k.png',ST.res,'gr'));
