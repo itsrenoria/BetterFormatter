@@ -501,7 +501,7 @@
       "imageURL": "",
       "isEnabled": true,
       "name": "🇷🇺",
-      "pattern": "(?i)\\brussian\\b|\\brus\\b",
+      "pattern": "(?i)\\brussian\\b|\\brus\\b|[Ѐ-ӿ]",
       "tagColor": "#00000000",
       "tagStyle": "filled and bordered",
       "textColor": "#80FFFFFF",
