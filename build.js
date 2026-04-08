@@ -24,17 +24,23 @@ function mk(id,name,pat,img,st,gid){
 const RMX_T1='3L|BiZKiT|BLURANiUM|BMF|CiNEPHiLES|FraMeSToR|PiRAMiDHEAD|PmP|WiLDCAT|ZQ';
 const RMX_T2='ATELiER|NCmt|playBD|SiCFoI|SURFINBIRD|TEPES|12GaugeShotgun|decibeL|EPSiLON|HiFi|KRaLiMaRKo|PTer|TRiToN';
 const RMX_T3='iFT|NTb|PTP|SumVision|TOA';
-const RMX_ALL=RMX_T1+'|'+RMX_T2+'|'+RMX_T3;
+const RMX_T4='ABdex|Afro|aRMX|BiRJU|BKC|CBT|Chimera|derp|DIY|EXP|Foxtrot|grimf|IK|Kaleido-subs|Kametsu|Kawatare|KH|LazyRemux|Metal|MK|neko-kBaraka|OZR|Pizza|pog42|Quetzal|Reza|SCY|Shimatta|Smoke|Spirale|UDF|UQW|Virtuality|Vanilla|VULCAN';
+const RMX_T5='Animorphs|AOmundson|ASC|Baws|Beatrice|B00BA|Cait-Sidhe|CsS|CTR|D4C|deanzel|Drag|eldon|Freehold|GHS|Hark0N|Holomux|Judgement|MC|mottoj|NH|NTRM|o7|QM|Thighs|TTGA|UltraRemux|WBDP|WSE|Yuki';
+const RMX_ALL=RMX_T1+'|'+RMX_T2+'|'+RMX_T3+'|'+RMX_T4+'|'+RMX_T5;
 
 const BLU_T1='CtrlHD|MainFrame|W4NK3R|DON|BBQ|BMF|c0kE|Chotab|CRiSC|D-Z0N3|Dariush|decibeL|EbP|EDPH|LolHD|NCmt|PTer|TayTO|TDD|TnP|VietHD|ZQ|ZoroSenpai|Geek|NTb';
 const BLU_T2='HQMUX|ATELiER|EA|HiDt|HiSD|iFT|QOQ|SA89|sbR';
 const BLU_T3='BHDStudio|hallowed|HONE|SPHD|WEBDV|HiFi|playHD|LoRD';
-const BLU_ALL=BLU_T1+'|'+BLU_T2+'|'+BLU_T3;
+const BLU_T4=RMX_T4; // Anime BD groups apply to both Remux and BluRay
+const BLU_T5=RMX_T5;
+const BLU_ALL=BLU_T1+'|'+BLU_T2+'|'+BLU_T3+'|'+BLU_T4+'|'+BLU_T5;
 
 const WEB_T1='ABBIE|ABBiE|AJP69|APEX|BLUTONiUM|BYNDR|CMRG|CRFW|CRUD|CasStudio|CtrlHD|FLUX|GNOME|HONE|KiNGS|Kitsune|NOSiViD|NTb|NTG|PAXA|PEXA|QOQ|RAWR|RTN|SiC|T6D|TEPES|TheFarm|TOMMY|ViSUM|XEPA|ZoroSenpai|monkee';
 const WEB_T2='dB|MiU|MZABI|playWEB|SbR|SMURF|XEBEC|4KBEC|CEBEX|Flights|PHOENiX|3cTWeB|BTW|Chotab|Cinefeel|CiT|Coo7|DEEP|END|ETHiCS|FC|iJP|iKA|iT00NZ|JETIX|KHN|KiMCHI|LAZY|MiU|NPMS|NYH|orbitron|PSiG|ROCCaT|RTFM|SA89|SDCC|SIGMA|SiGMA|SPiRiT|TVSmash|WELP';
 const WEB_T3='BLOOM|Dooky|DRACULA|GNOMiSSiON|HHWEB|NINJACENTRAL|SLiGNOME|SwAgLaNdEr|T4H|ViSiON';
-const WEB_ALL=WEB_T1+'|'+WEB_T2+'|'+WEB_T3;
+const WEB_T4='Erai-raws|ToonsHub|VARYG';
+const WEB_T5='BlueLobster|GST|HorribleRips|HorribleSubs|KAN3D2M|KiyoshiStar|Lia|NanDesuKa|PlayWeb|SobsPlease|Some-Stuffs|SubsPlease|URANIME|ZigZag';
+const WEB_ALL=WEB_T1+'|'+WEB_T2+'|'+WEB_T3+'|'+WEB_T4+'|'+WEB_T5;
 
 // Source detection fragments
 const IS_RMX='(?:[_. ]|\\d{4}p-|\\bHybrid-)(?:(?:BD|UHD)[-_. ]?)?Remux\\b|(?:(?:BD|UHD)[-_. ]?)?Remux[_. ]\\d{4}p';
@@ -84,6 +90,8 @@ function gen(C){
       {n:'T1',rmx:RMX_T1,blu:BLU_T1,web:WEB_T1,sub:'\u2081'},
       {n:'T2',rmx:RMX_T2,blu:BLU_T2,web:WEB_T2,sub:'\u2082'},
       {n:'T3',rmx:RMX_T3,blu:BLU_T3,web:WEB_T3,sub:'\u2083'},
+      {n:'T4',rmx:RMX_T4,blu:BLU_T4,web:WEB_T4,sub:'\u2084'},
+      {n:'T5',rmx:RMX_T5,blu:BLU_T5,web:WEB_T5,sub:'\u2085'},
     ];
     for(const t of tiers){
       T.push(mk('q-rmx-'+t.n.toLowerCase(),'Remux '+t.n,tierPat('remux',t.rmx,'Remux '+t.n,'\u0280\u1d07\u1d0d\u1d1c\u0445 \u1d1b'+t.sub),p+'-icon-remux-'+t.n.toLowerCase()+'.png',qs('best'),'gq'));
