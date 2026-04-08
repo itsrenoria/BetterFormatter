@@ -123,7 +123,13 @@ function gen(C){
   T.push(mk('v-imax-e','IMAX Enhanced','(?i)\\bimax[\\s._-]?enhanced\\b','IMAX-enhanced.png',ST.res,'gv'));
   T.push(mk('v-imax','IMAX','(?i)^(?=.*\\bIMAX\\b)(?!.*enhanced)','IMAX.png',ST.res,'gv'));
 
-  // Audio + DV
+  // DTS (before Dolby — shows first when present)
+  T.push(mk('a-dtsx','DTS:X','(?i)\\bdts[-_.: ]?x\\b','dtsx.png',ST.res,'ga'));
+  T.push(mk('a-dtsma','DTS-HD MA','(?i)^(?=.*\\bdts[-_. ]?(?:hd[-_. ]?)?ma\\b)(?!.*\\bdts[-_.: ]?x\\b)','dtshdma.png',ST.res,'ga'));
+  T.push(mk('a-dtshd','DTS-HD','(?i)^(?=.*\\bdts[-_. ]?hd\\b)(?!.*\\bdts[-_. ]?(?:hd[-_. ]?)?ma\\b)(?!.*\\bdts[-_.: ]?x\\b)','dtshd.png',ST.res,'ga'));
+  T.push(mk('a-dts','DTS','(?i)^(?=.*\\bDTS\\b)(?!.*\\bdts[-_. ]?(?:hd|ma|xll|x)\\b)','dts.png',ST.res,'ga'));
+
+  // Dolby Audio + DV (after DTS)
   if(C.dv==='combo'){
     T.push(mk('a-at-dv','Atmos+DV','(?i)^(?=.*'+ATMOS+')(?=.*'+DV+')','atmos-vision.png',ST.tr,'ga'));
     T.push(mk('a-at','Atmos','(?i)^(?=.*'+ATMOS+')(?!.*'+DV+')','atmos.png',ST.tr,'ga'));
@@ -141,12 +147,6 @@ function gen(C){
     T.push(mk('a-dp','DD+','(?i)^(?=.*'+DDP+')(?!.*'+ATMOS+')(?!.*'+TH+')','digitalplus.png',ST.tr,'ga'));
     T.push(mk('a-dd','DD','(?i)^(?=.*'+DD+')(?!.*'+DDP+')(?!.*'+TH+')(?!.*'+ATMOS+')','digital.png',ST.tr,'ga'));
   }
-
-  // DTS
-  T.push(mk('a-dtsx','DTS:X','(?i)\\bdts[-_.: ]?x\\b','dtsx.png',ST.res,'ga'));
-  T.push(mk('a-dtsma','DTS-HD MA','(?i)^(?=.*\\bdts[-_. ]?(?:hd[-_. ]?)?ma\\b)(?!.*\\bdts[-_.: ]?x\\b)','dtshdma.png',ST.res,'ga'));
-  T.push(mk('a-dtshd','DTS-HD','(?i)^(?=.*\\bdts[-_. ]?hd\\b)(?!.*\\bdts[-_. ]?(?:hd[-_. ]?)?ma\\b)(?!.*\\bdts[-_.: ]?x\\b)','dtshd.png',ST.res,'ga'));
-  T.push(mk('a-dts','DTS','(?i)^(?=.*\\bDTS\\b)(?!.*\\bdts[-_. ]?(?:hd|ma|xll|x)\\b)','dts.png',ST.res,'ga'));
 
   // Surround
   T.push(mk('ch-71','7.1','[^0-9][7-8][. ][01]','7dot1.png',ST.tr,'gc'));
