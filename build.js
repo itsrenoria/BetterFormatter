@@ -118,7 +118,7 @@ function gen(C){
 
   // IMAX (before audio — visual category)
   T.push(mk('v-imax-e','IMAX Enhanced','(?i)\\bimax[\\s._-]?enhanced\\b','IMAX-enhanced.png',ST.res,'gv'));
-  T.push(mk('v-imax','IMAX','(?i)\\bIMAX\\b(?!.*(?i)enhanced)','IMAX.png',ST.res,'gv'));
+  T.push(mk('v-imax','IMAX','(?i)^(?=.*\\bIMAX\\b)(?!.*enhanced)','IMAX.png',ST.res,'gv'));
 
   // SeaDex (from AIOStreams formatter output — requires formatter to include SeaDex text)
   T.push(mk('v-seadex','SeaDex','(?i)\\b(?:seadex|best[\\s._-]?release|alt[\\s._-]?(?:best[\\s._-]?)?release)\\b','SeaDex.png',ST.best,'gv'));

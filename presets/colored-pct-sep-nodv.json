@@ -1437,7 +1437,7 @@
       "imageURL": "https://raw.githubusercontent.com/9mousaa/BetterFormatter/main/images/IMAX.png",
       "isEnabled": true,
       "name": "IMAX",
-      "pattern": "(?i)\\bIMAX\\b(?!.*(?i)enhanced)",
+      "pattern": "(?i)^(?=.*\\bIMAX\\b)(?!.*enhanced)",
       "tagColor": "#33FFFFFF",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFF",
