@@ -58,7 +58,7 @@ h1{font-size:1.5rem;font-weight:800;margin-bottom:.2rem}
 
 <div class="sec"><h2>Description</h2><div class="opts" data-g="desc">
 <div class="o on" data-v="fn">Filename</div>
-<div class="o" data-v="short">Source · Size</div>
+<div class="o" data-v="short">Name · Size</div>
 </div></div>
 
 <h2 class="pvh">Preview</h2>
@@ -91,15 +91,15 @@ function pctS(p){const c=hsl((p/100)*120,1,.45),h=hx(...c);return{bc:'#66'+h,bg:
 
 // 10 realistic streams with actual filenames — covers all tag types
 const STREAMS=[
-  {qual:'Bluray Remux',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.REMUX.IMAX.DV.TrueHD.7.1.Atmos-FraMeSToR.mkv',pct:99,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'7.1',src:'remux',q:'best',tier:'t1',imax:'IMAX',seadex:false},
-  {qual:'Bluray Remux',title:'Dune (2021)',fn:'Dune.2021.2160p.BluRay.REMUX.IMAX.Enhanced.DV.TrueHD.7.1.Atmos-FraMeSToR.mkv',pct:99,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'7.1',src:'remux',q:'best',tier:'t1',imax:'IMAX Enhanced',seadex:false},
-  {qual:'Bluray',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.DV.HDR10Plus.DDP5.1.Atmos-iFT.mkv',pct:90,res:'4K',hdr:'HDR10+',dv:true,aud:'atmos',ch:'7.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:false},
-  {qual:'Bluray',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.HDR10.DTS-X.7.1-CtrlHD.mkv',pct:95,res:'4K',hdr:'HDR10',dv:false,aud:'dtsx',ch:'7.1',src:'bluray',q:'best',tier:'t1',imax:null,seadex:false},
-  {qual:'Bluray',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.HDR.TrueHD.7.1-DON.mkv',pct:90,res:'4K',hdr:'HDR',dv:false,aud:'truehd',ch:'7.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:false},
-  {qual:'Web-Dl',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.2160p.WEB-DL.DDP5.1.Atmos.DV-FLUX.mkv',pct:85,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'webdl',q:'good',tier:'t1',imax:null,seadex:false},
-  {qual:'Bluray',title:'Demon Slayer S01\xb7E01',fn:'Demon.Slayer.2019.1080p.BluRay.DV.DDP5.1.Atmos-hallowed.mkv',pct:80,res:'1080p',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:true},
-  {qual:'Web-Dl',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.1080p.WEB-DL.DDP5.1.DV-PHOENiX.mkv',pct:70,res:'1080p',hdr:null,dv:true,aud:'ddp',ch:'5.1',src:'webdl',q:'good',tier:'t3',imax:null,seadex:false},
-  {qual:'Web-Dl',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.720p.WEB-DL.DD5.1.DV-RandomGrp.mkv',pct:50,res:'720p',hdr:null,dv:true,aud:'dd',ch:'5.1',src:'webdl',q:'ok',tier:'t3',imax:null,seadex:false},
+  {qual:'Bluray Remux',title:'Avatar Fire and Ash (2025)',size:'76 GB',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.REMUX.IMAX.DV.TrueHD.7.1.Atmos-FraMeSToR.mkv',pct:99,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'7.1',src:'remux',q:'best',tier:'t1',imax:'IMAX',seadex:false},
+  {qual:'Bluray Remux',title:'Dune (2021)',size:'78 GB',fn:'Dune.2021.2160p.BluRay.REMUX.IMAX.Enhanced.DV.TrueHD.7.1.Atmos-FraMeSToR.mkv',pct:99,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'7.1',src:'remux',q:'best',tier:'t1',imax:'IMAX Enhanced',seadex:false},
+  {qual:'Bluray',title:'Avatar Fire and Ash (2025)',size:'24 GB',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.DV.HDR10Plus.DDP5.1.Atmos-iFT.mkv',pct:90,res:'4K',hdr:'HDR10+',dv:true,aud:'atmos',ch:'7.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:false},
+  {qual:'Bluray',title:'Avatar Fire and Ash (2025)',size:'18 GB',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.HDR10.DTS-X.7.1-CtrlHD.mkv',pct:95,res:'4K',hdr:'HDR10',dv:false,aud:'dtsx',ch:'7.1',src:'bluray',q:'best',tier:'t1',imax:null,seadex:false},
+  {qual:'Bluray',title:'Avatar Fire and Ash (2025)',size:'15 GB',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.HDR.TrueHD.7.1-DON.mkv',pct:90,res:'4K',hdr:'HDR',dv:false,aud:'truehd',ch:'7.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:false},
+  {qual:'Web-Dl',title:'Avatar Fire and Ash (2025)',size:'18 GB',fn:'Avatar.Fire.and.Ash.2025.2160p.WEB-DL.DDP5.1.Atmos.DV-FLUX.mkv',pct:85,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'webdl',q:'good',tier:'t1',imax:null,seadex:false},
+  {qual:'Bluray',title:'Demon Slayer S01\xb7E01',size:'4 GB',fn:'Demon.Slayer.2019.1080p.BluRay.DV.DDP5.1.Atmos-hallowed.mkv',pct:80,res:'1080p',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:true},
+  {qual:'Web-Dl',title:'Avatar Fire and Ash (2025)',size:'4 GB',fn:'Avatar.Fire.and.Ash.2025.1080p.WEB-DL.DDP5.1.DV-PHOENiX.mkv',pct:70,res:'1080p',hdr:null,dv:true,aud:'ddp',ch:'5.1',src:'webdl',q:'good',tier:'t3',imax:null,seadex:false},
+  {qual:'Web-Dl',title:'Avatar Fire and Ash (2025)',size:'2 GB',fn:'Avatar.Fire.and.Ash.2025.720p.WEB-DL.DD5.1.DV-RandomGrp.mkv',pct:50,res:'720p',hdr:null,dv:true,aud:'dd',ch:'5.1',src:'webdl',q:'ok',tier:'t3',imax:null,seadex:false},
 ];
 
 function rgba(c){
@@ -127,7 +127,7 @@ function preview(){
   const p=C.icon,mono=p==='mono';
   let h='';
   for(const s of STREAMS){
-    const descTxt=C.desc==='fn'?s.fn:s.title;
+    const descTxt=C.desc==='fn'?s.fn:s.title+' \xb7 '+s.size;
     h+='<div class="cd"><div class="cn">'+fmtName(s)+'</div><div class="cs">'+descTxt+'</div><div class="tr">';
 
     // 1) QUALITY
