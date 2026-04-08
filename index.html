@@ -137,6 +137,9 @@ function preview(){
       h+=thtml(s.pct+'%',null,mono?ST.res:pctS(s.pct));
     }
 
+    // 1b) SEADEX — right after quality
+    if(s.seadex)h+=thtml(null,'SeaDex.png',ST.best);
+
     // 2) RESOLUTION
     const ri=s.res==='4K'?'4k.png':s.res.toLowerCase()+'.png';
     h+=thtml(null,ri,ST.res);
@@ -183,9 +186,6 @@ function preview(){
 
     // 5) SURROUND
     h+=thtml(null,s.ch==='7.1'?'7dot1.png':'5dot1.png',ST.tr);
-
-    // 6) SEADEX
-    if(s.seadex)h+=thtml(null,'SeaDex.png',ST.best);
 
     h+='</div></div>';
   }

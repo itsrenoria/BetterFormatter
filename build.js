@@ -105,6 +105,9 @@ function gen(C){
     T.push(mk('q-w','WebDL','(?i)\\b(?:web[-_. ]?dl|webdl|webrip|web-rip)\\b',p+'-webdl.png',qs('best'),'gq'));
   }
 
+  // SeaDex — right after quality (from AIOStreams formatter output)
+  T.push(mk('v-seadex','SeaDex','(?i)\\b(?:seadex|best[\\s._-]?release|alt[\\s._-]?(?:best[\\s._-]?)?release)\\b','SeaDex.png',ST.best,'gv'));
+
   // Resolution
   T.push(mk('r-4k','4K','(?i)^(?=.*(?:2160[pi]?|4k|uhd))(?!.*(?:1080[pi]?|720[pi]?))','4k.png',ST.res,'gr'));
   T.push(mk('r-1080','1080p','(?i)\\b1080[pi]?\\b','1080p.png',ST.res,'gr'));
@@ -119,9 +122,6 @@ function gen(C){
   // IMAX (before audio — visual category)
   T.push(mk('v-imax-e','IMAX Enhanced','(?i)\\bimax[\\s._-]?enhanced\\b','IMAX-enhanced.png',ST.res,'gv'));
   T.push(mk('v-imax','IMAX','(?i)^(?=.*\\bIMAX\\b)(?!.*enhanced)','IMAX.png',ST.res,'gv'));
-
-  // SeaDex (from AIOStreams formatter output — requires formatter to include SeaDex text)
-  T.push(mk('v-seadex','SeaDex','(?i)\\b(?:seadex|best[\\s._-]?release|alt[\\s._-]?(?:best[\\s._-]?)?release)\\b','SeaDex.png',ST.best,'gv'));
 
   // Audio + DV
   if(C.dv==='combo'){
