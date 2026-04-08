@@ -60,7 +60,7 @@ function unrankedPat(source,allGroups){
 const DV='\\b(?:dv|dovi|dolby[\\s._-]?vision)\\b';
 const ATMOS='\\batmos\\b';
 const TH='\\btrue[\\s._-]?hd\\b';
-const DDP='\\b(?:ddp|dd\\\\+|eac3|e-ac-?3)\\b';
+const DDP='(?:\\bddp|\\bdd\\+|\\beac-?3|\\be-?ac-?3)';
 const DD='\\b(?:dd[25][. ][01]|dd[^p+a-z]\\b|\\bac-?3)\\b';
 
 function gen(C){
