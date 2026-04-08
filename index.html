@@ -91,15 +91,15 @@ function pctS(p){const c=hsl((p/100)*120,1,.45),h=hx(...c);return{bc:'#66'+h,bg:
 
 // 10 realistic streams with actual filenames — covers all tag types
 const STREAMS=[
-  {qual:'Bluray Remux',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.REMUX.IMAX.DV.TrueHD.7.1.Atmos-FraMeSToR.mkv',pct:99,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'7.1',src:'remux',q:'best',tier:'t1',imax:'IMAX',seadex:false},
-  {qual:'Bluray Remux',fn:'Dune.2021.2160p.BluRay.REMUX.IMAX.Enhanced.DV.TrueHD.7.1.Atmos-FraMeSToR.mkv',pct:99,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'7.1',src:'remux',q:'best',tier:'t1',imax:'IMAX Enhanced',seadex:false},
-  {qual:'Bluray',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.DV.HDR10Plus.DDP5.1.Atmos-iFT.mkv',pct:90,res:'4K',hdr:'HDR10+',dv:true,aud:'atmos',ch:'7.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:false},
-  {qual:'Bluray',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.HDR10.DTS-X.7.1-CtrlHD.mkv',pct:95,res:'4K',hdr:'HDR10',dv:false,aud:'dtsx',ch:'7.1',src:'bluray',q:'best',tier:'t1',imax:null,seadex:false},
-  {qual:'Bluray',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.HDR.TrueHD.7.1-DON.mkv',pct:90,res:'4K',hdr:'HDR',dv:false,aud:'truehd',ch:'7.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:false},
-  {qual:'Web-Dl',fn:'Avatar.Fire.and.Ash.2025.2160p.WEB-DL.DDP5.1.Atmos.DV-FLUX.mkv',pct:85,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'webdl',q:'good',tier:'t1',imax:null,seadex:false},
-  {qual:'Bluray',fn:'Demon.Slayer.2019.1080p.BluRay.DV.DDP5.1.Atmos-hallowed.mkv',pct:80,res:'1080p',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:true},
-  {qual:'Web-Dl',fn:'Avatar.Fire.and.Ash.2025.1080p.WEB-DL.DDP5.1.DV-PHOENiX.mkv',pct:70,res:'1080p',hdr:null,dv:true,aud:'ddp',ch:'5.1',src:'webdl',q:'good',tier:'t3',imax:null,seadex:false},
-  {qual:'Web-Dl',fn:'Avatar.Fire.and.Ash.2025.720p.WEB-DL.DD5.1.DV-RandomGrp.mkv',pct:50,res:'720p',hdr:null,dv:true,aud:'dd',ch:'5.1',src:'webdl',q:'ok',tier:'t3',imax:null,seadex:false},
+  {qual:'Bluray Remux',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.REMUX.IMAX.DV.TrueHD.7.1.Atmos-FraMeSToR.mkv',pct:99,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'7.1',src:'remux',q:'best',tier:'t1',imax:'IMAX',seadex:false},
+  {qual:'Bluray Remux',title:'Dune (2021)',fn:'Dune.2021.2160p.BluRay.REMUX.IMAX.Enhanced.DV.TrueHD.7.1.Atmos-FraMeSToR.mkv',pct:99,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'7.1',src:'remux',q:'best',tier:'t1',imax:'IMAX Enhanced',seadex:false},
+  {qual:'Bluray',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.DV.HDR10Plus.DDP5.1.Atmos-iFT.mkv',pct:90,res:'4K',hdr:'HDR10+',dv:true,aud:'atmos',ch:'7.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:false},
+  {qual:'Bluray',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.HDR10.DTS-X.7.1-CtrlHD.mkv',pct:95,res:'4K',hdr:'HDR10',dv:false,aud:'dtsx',ch:'7.1',src:'bluray',q:'best',tier:'t1',imax:null,seadex:false},
+  {qual:'Bluray',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.2160p.BluRay.x265.HDR.TrueHD.7.1-DON.mkv',pct:90,res:'4K',hdr:'HDR',dv:false,aud:'truehd',ch:'7.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:false},
+  {qual:'Web-Dl',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.2160p.WEB-DL.DDP5.1.Atmos.DV-FLUX.mkv',pct:85,res:'4K',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'webdl',q:'good',tier:'t1',imax:null,seadex:false},
+  {qual:'Bluray',title:'Demon Slayer S01\xb7E01',fn:'Demon.Slayer.2019.1080p.BluRay.DV.DDP5.1.Atmos-hallowed.mkv',pct:80,res:'1080p',hdr:null,dv:true,aud:'atmos',ch:'5.1',src:'bluray',q:'good',tier:'t2',imax:null,seadex:true},
+  {qual:'Web-Dl',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.1080p.WEB-DL.DDP5.1.DV-PHOENiX.mkv',pct:70,res:'1080p',hdr:null,dv:true,aud:'ddp',ch:'5.1',src:'webdl',q:'good',tier:'t3',imax:null,seadex:false},
+  {qual:'Web-Dl',title:'Avatar Fire and Ash (2025)',fn:'Avatar.Fire.and.Ash.2025.720p.WEB-DL.DD5.1.DV-RandomGrp.mkv',pct:50,res:'720p',hdr:null,dv:true,aud:'dd',ch:'5.1',src:'webdl',q:'ok',tier:'t3',imax:null,seadex:false},
 ];
 
 function rgba(c){
@@ -127,8 +127,8 @@ function preview(){
   const p=C.icon,mono=p==='mono';
   let h='';
   for(const s of STREAMS){
-    const descTxt=C.desc==='fn'?s.fn:s.qual+' \xb7 '+s.fn.match(/[\d.]+\s?GB/i)?.[0];
-    h+='<div class="cd"><div class="cn">'+fmtName(s)+'</div><div class="cs">'+(descTxt||s.fn)+'</div><div class="tr">';
+    const descTxt=C.desc==='fn'?s.fn:s.title;
+    h+='<div class="cd"><div class="cn">'+fmtName(s)+'</div><div class="cs">'+descTxt+'</div><div class="tr">';
 
     // 1) QUALITY
     if(C.qual==='bgb'){
@@ -309,7 +309,7 @@ function gen(){
 function fmt(){
   const d=C.desc==='fn'
     ?'{stream.filename::exists["{stream.filename}"||""]}'
-    :'{stream.quality::exists["{stream.quality::title}"||""]}{service.shortName::exists[" \xb7 {service.shortName}"||""]}{stream.size::>0[" \xb7 {stream.size::bytes}"||""]}';
+    :'{stream.title::exists["{stream.title::title}"||""]}{stream.year::exists::and::stream.episodes::exists::isfalse::and::stream.seasons::exists::isfalse[" ({stream.year})"||""]}{stream.seasonEpisode::exists[" {stream.seasonEpisode::join(\'\xb7\')}"||""]}';
   if(C.qual==='pct')return{n:'{stream.nSeScore::exists["{stream.nSeScore}% "||""]}{stream.quality::exists["{stream.quality::title}"||""]}',d};
   if(C.qual==='bgb')return{n:"{stream.nSeScore::exists[\"{stream.nSeScore::pstar::replace('\u2bea','\u2605')::replace('\u2605\u2605\u2605\u2605\u2605','\u265b ')::replace('\u2605\u2605\u2605\u2605\u2606','\u2b51 ')::replace('\u2605\u2605\u2605\u2606\u2606','\u2726 ')::replace('\u2605\u2605\u2606\u2606\u2606','\u25b3 ')::replace('\u2605\u2606\u2606\u2606\u2606','\u2205 ')::replace('\u2606\u2606\u2606\u2606\u2606','\u2205 ')}\"||\"\"]}"+'{stream.quality::exists["{stream.quality::title}"||""]}',d};
   return{n:'{stream.quality::exists["{stream.quality::title}"||""]}',d};
